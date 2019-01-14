@@ -1,5 +1,7 @@
 {
   "name": "test-file-plugin",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

@@ -10,31 +10,40 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FileTransfer } from "@ionic-native/file-transfer";
+import { File } from "@ionic-native/file";
+import { ToastProvider } from '../providers/toast/toast';
+import { Diagnostic } from "@ionic-native/diagnostic";
 
 @NgModule({
-  declarations: [
-    MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    declarations: [
+        MyApp,
+        AboutPage,
+        ContactPage,
+        HomePage,
+        TabsPage
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(MyApp)
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        AboutPage,
+        ContactPage,
+        HomePage,
+        TabsPage
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        FileTransfer,
+        File,
+        Diagnostic,
+        { provide: ErrorHandler, useClass: IonicErrorHandler },
+        ToastProvider
+    ]
 })
-export class AppModule {}
+export class AppModule {
+}
